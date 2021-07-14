@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.1](https://www.github.com/brokeyourbike/action-release-opencart-module/compare/v1.1.0...v1.1.1) (2021-07-14)
+
+
+### Bug Fixes
+
+* modification file should be `install.xml` ([2cc8adc](https://www.github.com/brokeyourbike/action-release-opencart-module/commit/2cc8adca50708b321304145a9e8bed75f1271ff9))
+
 ## [1.1.0](https://www.github.com/brokeyourbike/action-release-opencart-module/compare/v1.0.5...v1.1.0) (2021-07-14)
 
 
