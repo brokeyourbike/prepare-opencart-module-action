@@ -23,7 +23,7 @@ jobs:
       # Clean up the production install, before installing dev/production:
       - run: rm -rf node_modules
       - run: npm install
-      - run: npm lint
+      - run: npm run lint
   windows:
     runs-on: windows-latest
     steps:
@@ -32,4 +32,4 @@ jobs:
         with:
           node-version: 14
       - run: npm install
-      - run: npm lint
+      - run: npm run lint
