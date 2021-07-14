@@ -17,27 +17,29 @@ console.log(`Ready to zip ${files} into ${destName}`)
 
 const zip = new AdmZip()
 
-files.split(' ').forEach(fileName => {
-  const filePath = path.join(process.env.GITHUB_WORKSPACE, fileName)
+if (files !== '') {
+  files.split(' ').forEach(fileName => {
+    const filePath = path.join(process.env.GITHUB_WORKSPACE, fileName)
 
-  if (!fs.existsSync(filePath)) {
-    console.log(`  - ${fileName} (Not Found)`)
-    return
-  }
+    if (!fs.existsSync(filePath)) {
+      console.log(`  - ${fileName} (Not Found)`)
+      return
+    }
 
-  const dir = path.dirname(fileName)
-  const stats = fs.lstatSync(filePath)
+    const dir = path.dirname(fileName)
+    const stats = fs.lstatSync(filePath)
 
-  if (stats.isDirectory()) {
-    const zipPath = dir === '.' ? fileName : dir
-    zip.addLocalFolder(filePath, path.join(UPLOAD_FOLDER, zipPath))
-  } else {
-    const zipPath = dir === '.' ? '' : dir
-    zip.addLocalFile(filePath, path.join(UPLOAD_FOLDER, zipPath))
-  }
+    if (stats.isDirectory()) {
+      const zipPath = dir === '.' ? fileName : dir
+      zip.addLocalFolder(filePath, path.join(UPLOAD_FOLDER, zipPath))
+    } else {
+      const zipPath = dir === '.' ? '' : dir
+      zip.addLocalFile(filePath, path.join(UPLOAD_FOLDER, zipPath))
+    }
 
-  console.log(`  - ${fileName}`)
-})
+    console.log(`  - ${fileName}`)
+  })
+}
 
 if (modificationFile) {
   const modificationFilePath = path.join(process.env.GITHUB_WORKSPACE, modificationFile)
