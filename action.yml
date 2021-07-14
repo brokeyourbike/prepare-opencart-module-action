@@ -1,0 +1,20 @@
+name: 'Prepare Opencart module'
+description: 'Action for zipping files and folders in ocmod archive'
+author: Ivan Stasiuk
+inputs:
+  module-name:
+    description: 'name of the distribution module'
+    required: false
+  files:
+    description: 'files or directories to include'
+    required: true
+  recursive:
+    description: 'whether to add subdirectories to simply zip all files to the root'
+    required: false
+    default: 'true'
+branding:
+  icon: 'package'
+  color: 'blue'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
