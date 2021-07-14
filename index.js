@@ -41,4 +41,4 @@ zip.writeZip(destPath)
 core.setOutput('output_name', destName)
 core.setOutput('output_file', destPath)
 
-console.log(`\nZipped file ${dest} successfully`)
+console.log(`\nZipped file ${destName} successfully`)
