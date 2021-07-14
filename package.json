@@ -1,5 +1,4 @@
 {
-  "name": "action-release-opencart-module",
   "version": "1.0.5",
   "description": "Action for zipping files and folders in ocmod archive",
   "author": "Ivan Stasiuk <brokeyourbike@gmail.com>",

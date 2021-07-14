@@ -13,5 +13,4 @@ jobs:
     steps:
       - uses: google-github-actions/release-please-action@v2
         with:
-          package-name: ''
           release-type: node
