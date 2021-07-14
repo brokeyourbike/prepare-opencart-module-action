@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.5](https://www.github.com/brokeyourbike/action-release-opencart-module/compare/v1.0.4...v1.0.5) (2021-07-14)
+
+
+### Bug Fixes
+
+* add files to the `upload` folder & remove recursive options ([9c232aa](https://www.github.com/brokeyourbike/action-release-opencart-module/commit/9c232aa21ddab6cb8d565e172346a94da6d4a13b))
+
 ### [1.0.4](https://www.github.com/brokeyourbike/action-release-opencart-module/compare/v1.0.3...v1.0.4) (2021-07-14)
 
 
