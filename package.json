@@ -17,7 +17,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "build": "ncc build index.js --license licenses.txt",
+    "build": "ncc build index.js --minify --license licenses.txt",
     "lint": "standard",
     "lint:fix": "standard --fix"
   },
