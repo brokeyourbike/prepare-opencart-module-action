@@ -1,63 +1,6 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 932:
-/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
-
-const fs = __nccwpck_require__(747)
-const path = __nccwpck_require__(622)
-const core = __nccwpck_require__(186)
-const AdmZip = __nccwpck_require__(761)
-
-async function main () {
-  const moduleName = core.getInput('module-name')
-  const files = core.getInput('files')
-  const recursive = core.getInput('recursive') === 'true'
-
-  const destName = `${moduleName}.ocmod.zip`
-  const destPath = path.join(process.env.GITHUB_WORKSPACE, destName)
-
-  console.log(`Ready to zip ${files} into ${destName}`)
-
-  const zip = new AdmZip()
-
-  files.split(' ').forEach(fileName => {
-    const filePath = path.join(process.env.GITHUB_WORKSPACE, fileName)
-
-    if (!fs.existsSync(filePath)) {
-      console.log(`  - ${fileName} (Not Found)`)
-      return
-    }
-
-    const dir = path.dirname(fileName)
-    const stats = fs.lstatSync(filePath)
-
-    if (stats.isDirectory()) {
-      const zipDir = dir === '.' ? fileName : dir
-      zip.addLocalFolder(filePath, !recursive && zipDir)
-    } else {
-      const zipDir = dir === '.' ? '' : dir
-      zip.addLocalFile(filePath, !recursive && zipDir)
-    }
-
-    console.log(`  - ${fileName}`)
-  })
-
-  zip.writeZip(destPath)
-
-  core.setOutput('output_name', destName)
-  core.setOutput('output_file', destPath)
-}
-
-const releaseOpencartModule = {
-  main
-}
-
-module.exports = releaseOpencartModule
-
-
-/***/ }),
-
 /***/ 351:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
@@ -3262,12 +3205,56 @@ module.exports = require("zlib");;
 /******/ 	/* webpack/runtime/compat */
 /******/ 	
 /******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";/************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	var __webpack_exports__ = __nccwpck_require__(932);
-/******/ 	module.exports = __webpack_exports__;
-/******/ 	
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
+const fs = __nccwpck_require__(747)
+const path = __nccwpck_require__(622)
+const core = __nccwpck_require__(186)
+const AdmZip = __nccwpck_require__(761)
+
+const moduleName = core.getInput('module-name')
+const files = core.getInput('files')
+const recursive = core.getInput('recursive') === 'true'
+
+const destName = `${moduleName}.ocmod.zip`
+const destPath = path.join(process.env.GITHUB_WORKSPACE, destName)
+
+console.log(`Ready to zip ${files} into ${destName}`)
+
+const zip = new AdmZip()
+
+files.split(' ').forEach(fileName => {
+  const filePath = path.join(process.env.GITHUB_WORKSPACE, fileName)
+
+  if (!fs.existsSync(filePath)) {
+    console.log(`  - ${fileName} (Not Found)`)
+    return
+  }
+
+  const dir = path.dirname(fileName)
+  const stats = fs.lstatSync(filePath)
+
+  if (stats.isDirectory()) {
+    const zipDir = dir === '.' ? fileName : dir
+    zip.addLocalFolder(filePath, !recursive && zipDir)
+  } else {
+    const zipDir = dir === '.' ? '' : dir
+    zip.addLocalFile(filePath, !recursive && zipDir)
+  }
+
+  console.log(`  - ${fileName}`)
+})
+
+zip.writeZip(destPath)
+
+core.setOutput('output_name', destName)
+core.setOutput('output_file', destPath)
+
+console.log(`\nZipped file ${dest} successfully`)
+
+})();
+
+module.exports = __webpack_exports__;
 /******/ })()
 ;
