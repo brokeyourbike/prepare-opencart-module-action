@@ -1,6 +1,6 @@
 name: 'Prepare Opencart module'
 description: 'Action for zipping files and folders in ocmod archive'
-author: Ivan Stasiuk
+author: 'brokeyourbike'
 inputs:
   module-name:
     description: 'name of the distribution module'
