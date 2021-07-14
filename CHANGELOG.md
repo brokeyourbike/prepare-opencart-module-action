@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.4](https://www.github.com/brokeyourbike/prepare-opencart-module-action/compare/v1.1.3...v1.1.4) (2021-07-14)
+
+
+### Bug Fixes
+
+* can not really decide how many spaces ([a7bcc75](https://www.github.com/brokeyourbike/prepare-opencart-module-action/commit/a7bcc750ba10dcaea27645ecc4402eb555ff73af))
+
 ### [1.1.3](https://www.github.com/brokeyourbike/prepare-opencart-module-action/compare/v1.1.2...v1.1.3) (2021-07-14)
 
 
