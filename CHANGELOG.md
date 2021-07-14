@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.6](https://www.github.com/brokeyourbike/prepare-opencart-module-action/compare/v1.1.5...v1.1.6) (2021-07-14)
+
+
+### Bug Fixes
+
+* do not include files to the `upload` folders with default value ([e303403](https://www.github.com/brokeyourbike/prepare-opencart-module-action/commit/e303403a8135a5c90d7459d153dfd5e537186062))
+
 ### [1.1.5](https://www.github.com/brokeyourbike/prepare-opencart-module-action/compare/v1.1.4...v1.1.5) (2021-07-14)
 
 
