@@ -43,7 +43,7 @@ if (modificationFile) {
   const modificationFilePath = path.join(process.env.GITHUB_WORKSPACE, modificationFile)
 
   if (!fs.existsSync(modificationFilePath)) {
-    console.log(`Modification file - ${modificationFilePath} (Not Found)`)
+    core.setFailed(`Modification file - ${modificationFilePath} (Not Found)`)
   }
 
   zip.addLocalFile(modificationFilePath, MODIFICATION_NAME)
