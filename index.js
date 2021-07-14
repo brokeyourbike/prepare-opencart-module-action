@@ -4,6 +4,7 @@ const core = require('@actions/core')
 const AdmZip = require('adm-zip')
 
 const UPLOAD_FOLDER = 'upload'
+const MODIFICATION_NAME = 'install.xml'
 
 const moduleName = core.getInput('module-name')
 const files = core.getInput('files')
@@ -45,7 +46,7 @@ if (modificationFile) {
     console.log(`Modification file - ${modificationFilePath} (Not Found)`)
   }
 
-  zip.addLocalFile(modificationFilePath, '')
+  zip.addLocalFile(modificationFilePath, MODIFICATION_NAME)
 }
 
 zip.writeZip(destPath)
