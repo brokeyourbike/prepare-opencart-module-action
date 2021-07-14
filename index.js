@@ -21,7 +21,7 @@ files.split(' ').forEach(fileName => {
   const filePath = path.join(process.env.GITHUB_WORKSPACE, fileName)
 
   if (!fs.existsSync(filePath)) {
-    console.log(` - ${fileName} (Not Found)`)
+    console.log(`  - ${fileName} (Not Found)`)
     return
   }
 
@@ -36,7 +36,7 @@ files.split(' ').forEach(fileName => {
     zip.addLocalFile(filePath, path.join(UPLOAD_FOLDER, zipPath))
   }
 
-  console.log(` - ${fileName}`)
+  console.log(`  - ${fileName}`)
 })
 
 if (modificationFile) {
