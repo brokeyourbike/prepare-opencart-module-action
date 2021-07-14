@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/brokeyourbike/action-release-opencart-module/compare/v1.0.5...v1.1.0) (2021-07-14)
+
+
+### Features
+
+* add `modification-file` option ([72d1495](https://www.github.com/brokeyourbike/action-release-opencart-module/commit/72d1495e5e7d36e49bb02b752cf32714854b3749))
+
 ### [1.0.5](https://www.github.com/brokeyourbike/action-release-opencart-module/compare/v1.0.4...v1.0.5) (2021-07-14)
 
 
