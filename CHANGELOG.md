@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.4](https://www.github.com/brokeyourbike/action-release-opencart-module/compare/v1.0.3...v1.0.4) (2021-07-14)
+
+
+### Bug Fixes
+
+* use correct variable name ([2d1e263](https://www.github.com/brokeyourbike/action-release-opencart-module/commit/2d1e2639544413e80661964965e6bbb9c8e0c4d3))
+
 ### [1.0.3](https://www.github.com/brokeyourbike/action-release-opencart-module/compare/v1.0.2...v1.0.3) (2021-07-14)
 
 
