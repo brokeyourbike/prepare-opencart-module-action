@@ -17,6 +17,8 @@ async function main () {
   const destName = `${moduleName}.ocmod.zip`
   const destPath = path.join(process.env.GITHUB_WORKSPACE, destName)
 
+  console.log(`Ready to zip ${files} into ${destName}`)
+
   const zip = new AdmZip()
 
   files.split(' ').forEach(fileName => {
