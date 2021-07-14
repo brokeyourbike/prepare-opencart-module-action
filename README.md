@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Prepare Ocmod
-        uses: brokeyourbike/action-release-opencart-module@v1.1.0
+        uses: brokeyourbike/prepare-opencart-module-action@v1.1.1
         id: prepare
         with:
           module-name: example-module-name
