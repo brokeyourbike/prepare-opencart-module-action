@@ -3213,9 +3213,10 @@ const path = __nccwpck_require__(622)
 const core = __nccwpck_require__(186)
 const AdmZip = __nccwpck_require__(761)
 
+const UPLOAD_FOLDER = 'upload'
+
 const moduleName = core.getInput('module-name')
 const files = core.getInput('files')
-const recursive = core.getInput('recursive') === 'true'
 
 const destName = `${moduleName}.ocmod.zip`
 const destPath = path.join(process.env.GITHUB_WORKSPACE, destName)
@@ -3236,11 +3237,11 @@ files.split(' ').forEach(fileName => {
   const stats = fs.lstatSync(filePath)
 
   if (stats.isDirectory()) {
-    const zipDir = dir === '.' ? fileName : dir
-    zip.addLocalFolder(filePath, !recursive && zipDir)
+    const zipPath = dir === '.' ? fileName : dir
+    zip.addLocalFolder(filePath, path.join(UPLOAD_FOLDER, zipPath))
   } else {
-    const zipDir = dir === '.' ? '' : dir
-    zip.addLocalFile(filePath, !recursive && zipDir)
+    const zipPath = dir === '.' ? '' : dir
+    zip.addLocalFile(filePath, path.join(UPLOAD_FOLDER, zipPath))
   }
 
   console.log(`  - ${fileName}`)

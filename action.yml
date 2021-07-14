@@ -8,10 +8,6 @@ inputs:
   files:
     description: 'files or directories to include'
     required: true
-  recursive:
-    description: 'whether to add subdirectories to simply zip all files to the root'
-    required: false
-    default: 'true'
 branding:
   icon: 'package'
   color: 'blue'
