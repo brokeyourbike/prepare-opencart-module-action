@@ -46,7 +46,7 @@ if (modificationFile) {
     core.setFailed(`Modification file - ${modificationFilePath} (Not Found)`)
   }
 
-  zip.addLocalFile(modificationFilePath, MODIFICATION_NAME)
+  zip.addLocalFile(modificationFilePath, '', MODIFICATION_NAME)
 }
 
 zip.writeZip(destPath)
