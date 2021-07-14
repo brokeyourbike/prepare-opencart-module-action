@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.2](https://www.github.com/brokeyourbike/action-release-opencart-module/compare/v1.0.1...v1.0.2) (2021-07-14)
+
+
+### Bug Fixes
+
+* no need to use async ([44be279](https://www.github.com/brokeyourbike/action-release-opencart-module/commit/44be279c44c136a3694306efd84b525ad4d33cb0))
+
 ### [1.0.1](https://www.github.com/brokeyourbike/action-release-opencart-module/compare/v1.0.0...v1.0.1) (2021-07-14)
 
 
