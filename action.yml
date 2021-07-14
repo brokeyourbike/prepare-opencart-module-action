@@ -4,10 +4,14 @@ author: Ivan Stasiuk
 inputs:
   module-name:
     description: 'name of the distribution module'
-    required: false
+    required: true
   files:
     description: 'files or directories to include'
     required: true
+  modification-file:
+    description: 'whether to add modification to the module root'
+    required: false
+    default: 'install.xml'
 branding:
   icon: 'package'
   color: 'blue'

@@ -7,6 +7,7 @@ const UPLOAD_FOLDER = 'upload'
 
 const moduleName = core.getInput('module-name')
 const files = core.getInput('files')
+const modificationFile = core.getInput('modification-file')
 
 const destName = `${moduleName}.ocmod.zip`
 const destPath = path.join(process.env.GITHUB_WORKSPACE, destName)
@@ -36,6 +37,16 @@ files.split(' ').forEach(fileName => {
 
   console.log(`  - ${fileName}`)
 })
+
+if (modificationFile) {
+  const modificationFilePath = path.join(process.env.GITHUB_WORKSPACE, modificationFile)
+
+  if (!fs.existsSync(modificationFilePath)) {
+    console.log(`Modification file - ${modificationFilePath} (Not Found)`)
+  }
+
+  zip.addLocalFile(modificationFilePath, '')
+}
 
 zip.writeZip(destPath)
 
