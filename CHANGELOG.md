@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.1](https://www.github.com/brokeyourbike/action-release-opencart-module/compare/v1.0.0...v1.0.1) (2021-07-14)
+
+
+### Bug Fixes
+
+* add console log for debug purposes ([748be8e](https://www.github.com/brokeyourbike/action-release-opencart-module/commit/748be8ea154650f2f3f67695bbddb3691597e185))
+
 ## 1.0.0 (2021-07-14)
 
 
