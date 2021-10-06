@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/brokeyourbike/prepare-opencart-module-action/compare/v1.1.6...v1.2.0) (2021-10-06)
+
+
+### Features
+
+* allow to include license file ([81b119a](https://www.github.com/brokeyourbike/prepare-opencart-module-action/commit/81b119ae7f43ddd467deadbbb97af9b05b442c15))
+
+
+### Bug Fixes
+
+* `modification-file` can be empty ([db0291d](https://www.github.com/brokeyourbike/prepare-opencart-module-action/commit/db0291d851a78845903f2b8ffc7d6686c477cd42))
+* update dependencies ([82048d1](https://www.github.com/brokeyourbike/prepare-opencart-module-action/commit/82048d1bdae615ca755e7fe75e0ca10b1e4e94a3))
+
 ### [1.1.6](https://www.github.com/brokeyourbike/prepare-opencart-module-action/compare/v1.1.5...v1.1.6) (2021-07-14)
 
 
