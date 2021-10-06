@@ -5,10 +5,12 @@ const AdmZip = require('adm-zip')
 
 const UPLOAD_FOLDER = 'upload'
 const MODIFICATION_NAME = 'install.xml'
+const LICENSE_NAME = 'LICENSE.txt'
 
 const moduleName = core.getInput('module-name')
 const files = core.getInput('files')
 const modificationFile = core.getInput('modification-file')
+const licenseFile = core.getInput('license-file')
 
 const destName = `${moduleName}.ocmod.zip`
 const destPath = path.join(process.env.GITHUB_WORKSPACE, destName)
@@ -49,6 +51,16 @@ if (modificationFile !== '') {
   }
 
   zip.addLocalFile(modificationFilePath, '', MODIFICATION_NAME)
+}
+
+if (licenseFile !== '') {
+  const licenseFilePath = path.join(process.env.GITHUB_WORKSPACE, licenseFile)
+
+  if (!fs.existsSync(licenseFilePath)) {
+    core.setFailed(`License file - ${licenseFilePath} (Not Found)`)
+  }
+
+  zip.addLocalFile(licenseFilePath, '', LICENSE_NAME)
 }
 
 zip.writeZip(destPath)
