@@ -41,7 +41,7 @@ if (files !== '') {
   })
 }
 
-if (modificationFile) {
+if (modificationFile !== '') {
   const modificationFilePath = path.join(process.env.GITHUB_WORKSPACE, modificationFile)
 
   if (!fs.existsSync(modificationFilePath)) {
