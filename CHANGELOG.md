@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.1.7](https://www.github.com/brokeyourbike/prepare-opencart-module-action/compare/v1.1.6...v1.1.7) (2021-10-06)
+
+
+### Bug Fixes
+
+* `modification-file` can be empty ([db0291d](https://www.github.com/brokeyourbike/prepare-opencart-module-action/commit/db0291d851a78845903f2b8ffc7d6686c477cd42))
+* update dependencies ([82048d1](https://www.github.com/brokeyourbike/prepare-opencart-module-action/commit/82048d1bdae615ca755e7fe75e0ca10b1e4e94a3))
+
 ### [1.1.6](https://www.github.com/brokeyourbike/prepare-opencart-module-action/compare/v1.1.5...v1.1.6) (2021-07-14)
 
 
