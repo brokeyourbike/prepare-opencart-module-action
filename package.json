@@ -1,5 +1,5 @@
 {
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Action for zipping files and folders in ocmod archive",
   "author": "Ivan Stasiuk <brokeyourbike@gmail.com>",
   "license": "MIT",
