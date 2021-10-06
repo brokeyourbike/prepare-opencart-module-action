@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.1](https://www.github.com/brokeyourbike/prepare-opencart-module-action/compare/v1.2.0...v1.2.1) (2021-10-06)
+
+
+### Bug Fixes
+
+* adjust inputs ([2983602](https://www.github.com/brokeyourbike/prepare-opencart-module-action/commit/29836023ca7b84d7e05dd36646d4c3b15a5c0897))
+
 ## [1.2.0](https://www.github.com/brokeyourbike/prepare-opencart-module-action/compare/v1.1.6...v1.2.0) (2021-10-06)
 
 
