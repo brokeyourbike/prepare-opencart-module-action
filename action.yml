@@ -12,7 +12,11 @@ inputs:
   modification-file:
     description: 'whether to add modification to the module root'
     required: false
-    default: 'install.xml'
+    default: ''
+  license-file:
+    description: 'whether to add license to the module root'
+    required: false
+    default: ''
 branding:
   icon: 'package'
   color: 'blue'
