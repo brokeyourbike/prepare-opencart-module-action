@@ -1,4 +1,7 @@
 # prepare-opencart-module-action
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/cba9783e98be5bc4f2cf/maintainability)](https://codeclimate.com/github/brokeyourbike/prepare-opencart-module-action/maintainability)
+
 Prepare Opencart module
 
 ## Usage
