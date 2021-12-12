@@ -10,16 +10,17 @@
     "zip",
     "ocmod"
   ],
-  "homepage": "https://github.com/brokeyourbike/action-release-opencart-module#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brokeyourbike/action-release-opencart-module.git"
+    "url": "git+https://github.com/brokeyourbike/prepare-opencart-module-action.git"
   },
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "build": "ncc build index.js --minify --license licenses.txt",
-    "lint": "standard",
-    "lint:fix": "standard --fix"
+    "build": "tsc && ncc build --minify",
+    "format": "ts-standard --fix src/*.ts",
+    "format-check": "ts-standard src/*.ts",
+    "test": "jest --coverage",
+    "pre-checkin": "np, run format && npm run build && npm test"
   },
   "dependencies": {
     "@actions/core": "^1.4.0",
@@ -27,8 +28,16 @@
     "adm-zip": "^0.5.5"
   },
   "devDependencies": {
-    "@vercel/ncc": "^0.28.6",
-    "standard": "^16.0.3"
+    "@types/adm-zip": "^0.4.34",
+    "@types/jest": "^27.0.3",
+    "@zeit/ncc": "^0.22.3",
+    "jest": "^27.4.4",
+    "jest-circus": "^27.4.4",
+    "nock": "^13.2.1",
+    "ts-jest": "^27.1.1",
+    "ts-node": "^10.4.0",
+    "ts-standard": "*",
+    "typescript": "^3.8.3"
   },
   "standard": {
     "ignore": "dist/"
