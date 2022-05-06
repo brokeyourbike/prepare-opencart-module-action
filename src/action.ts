@@ -1,5 +1,5 @@
 import * as core from '@actions/core'
-import AdmZip from 'adm-zip'
+import archiver from 'archiver'
 import fs from 'fs'
 import path from 'path'
 
@@ -26,7 +26,7 @@ export async function run (): Promise<void> {
 
     core.info(`Ready to zip ${files} into ${destName}`)
 
-    const zip = new AdmZip()
+    const archive = archiver('zip', { zlib: { level: 1 }})
 
     if (files !== '') {
       files.split(' ').forEach(fileName => {
@@ -42,10 +42,10 @@ export async function run (): Promise<void> {
 
         if (stats.isDirectory()) {
           const zipPath = dir === '.' ? fileName : dir
-          zip.addLocalFolder(filePath, path.join(UPLOAD_FOLDER, zipPath))
+          archive.directory(filePath, path.join(UPLOAD_FOLDER, zipPath))
         } else {
           const zipPath = dir === '.' ? '' : dir
-          zip.addLocalFile(filePath, path.join(UPLOAD_FOLDER, zipPath))
+          archive.file(filePath, { name: zipPath })
         }
 
         core.info(`  - ${fileName}`)
@@ -60,7 +60,7 @@ export async function run (): Promise<void> {
         return
       }
 
-      zip.addLocalFile(modificationFilePath, '', MODIFICATION_NAME)
+      archive.file(modificationFilePath, { name: MODIFICATION_NAME })
     }
 
     if (licenseFile !== '') {
@@ -71,10 +71,11 @@ export async function run (): Promise<void> {
         return
       }
 
-      zip.addLocalFile(licenseFilePath, '', LICENSE_NAME)
+      archive.file(licenseFilePath, { name: LICENSE_NAME })
     }
 
-    zip.writeZip(destPath)
+    archive.pipe(fs.createWriteStream(destPath))
+    archive.finalize()
 
     core.setOutput('output_name', destName)
     core.setOutput('output_file', destPath)
