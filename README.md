@@ -19,7 +19,7 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Prepare Ocmod
         uses: brokeyourbike/prepare-opencart-module-action@v1
@@ -38,3 +38,10 @@ jobs:
           asset_name: ${{ steps.prepare.outputs.output_name }}
           asset_content_type: application/zip
 ```
+## Authors
+
+- [Ivan Stasiuk](https://github.com/brokeyourbike) | [Twitter](https://twitter.com/brokeyourbike) | [LinkedIn](https://www.linkedin.com/in/brokeyourbike) | [stasi.uk](https://stasi.uk)
+
+## License
+
+[MIT License](https://github.com/brokeyourbike/prepare-opencart-module-action/blob/main/LICENSE)
