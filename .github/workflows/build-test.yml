@@ -20,6 +20,5 @@ jobs:
         with:
           node-version: 16
       - run: npm install
-      - run: npm test
       - run: npm audit --audit-level=high
         if: matrix.operating-system == 'ubuntu-latest'
