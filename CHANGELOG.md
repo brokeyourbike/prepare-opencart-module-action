@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.2.2](https://www.github.com/brokeyourbike/prepare-opencart-module-action/compare/v1.2.1...v1.2.2) (2023-05-11)
+
+
+### Bug Fixes
+
+* remove unused deps ([772841e](https://www.github.com/brokeyourbike/prepare-opencart-module-action/commit/772841e31ef4206f6e3064a99d7738ccfc713de9))
+* use typescript ([92cd7c3](https://www.github.com/brokeyourbike/prepare-opencart-module-action/commit/92cd7c3966a50254c4dfa8014f866a912aa341b6))
+
 ### [1.2.1](https://www.github.com/brokeyourbike/prepare-opencart-module-action/compare/v1.2.0...v1.2.1) (2021-10-06)
 
 
