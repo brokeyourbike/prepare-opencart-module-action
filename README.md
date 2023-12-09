@@ -38,6 +38,17 @@ jobs:
           asset_name: ${{ steps.prepare.outputs.output_name }}
           asset_content_type: application/zip
 ```
+
+## Arguments
+
+| Input  | Description | Usage |
+| :---:     |     :---:   |    :---:   |
+| `module-name`  | name of the OpenCart module  | *Required |
+| `files`  | files or directories to includ  | |
+| `modification-file`  | add modification to the module root  | |
+| `license-file`  | add license to the module root  | |
+
+
 ## Authors
 
 - [Ivan Stasiuk](https://github.com/brokeyourbike) | [Twitter](https://twitter.com/brokeyourbike) | [LinkedIn](https://www.linkedin.com/in/brokeyourbike) | [stasi.uk](https://stasi.uk)
