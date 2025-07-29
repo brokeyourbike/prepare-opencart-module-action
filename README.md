@@ -3,7 +3,7 @@
 [![Latest Stable Version](https://img.shields.io/github/v/release/brokeyourbike/prepare-opencart-module-action)](https://github.com/brokeyourbike/prepare-opencart-module-action/releases)
 [![Maintainability](https://api.codeclimate.com/v1/badges/cba9783e98be5bc4f2cf/maintainability)](https://codeclimate.com/github/brokeyourbike/prepare-opencart-module-action/maintainability)
 
-Prepare Opencart module
+This action packages the files into a ZIP archive according to the requirements for OpenCart modules.
 
 ## Usage
 
@@ -20,7 +20,7 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Prepare Ocmod
         uses: brokeyourbike/prepare-opencart-module-action@v1
