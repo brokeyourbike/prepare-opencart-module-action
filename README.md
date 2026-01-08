@@ -1,7 +1,7 @@
 # prepare-opencart-module-action
 
 [![Latest Stable Version](https://img.shields.io/github/v/release/brokeyourbike/prepare-opencart-module-action)](https://github.com/brokeyourbike/prepare-opencart-module-action/releases)
-[![Maintainability](https://api.codeclimate.com/v1/badges/cba9783e98be5bc4f2cf/maintainability)](https://codeclimate.com/github/brokeyourbike/prepare-opencart-module-action/maintainability)
+[![codecov](https://codecov.io/gh/brokeyourbike/prepare-opencart-module-action/graph/badge.svg?token=4S9dAwb5Ya)](https://codecov.io/gh/brokeyourbike/prepare-opencart-module-action)
 
 This action packages the files into a ZIP archive according to the requirements for OpenCart modules.
 
