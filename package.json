@@ -14,7 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/brokeyourbike/prepare-opencart-module-action.git"
   },
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "tsc && ncc build --minify",
     "fmt": "prettier **/*.ts --write",
