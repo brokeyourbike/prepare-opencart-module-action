@@ -16,7 +16,7 @@
   },
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc && ncc build --minify",
+    "build": "tsc && ncc build",
     "fmt": "prettier **/*.ts --write",
     "test": "jest --coverage"
   },
