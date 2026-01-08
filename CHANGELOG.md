@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.3.0](https://github.com/brokeyourbike/prepare-opencart-module-action/compare/v1.2.4...v1.3.0) (2026-01-08)
+
+
+### Features
+
+* node24 ([f2884cf](https://github.com/brokeyourbike/prepare-opencart-module-action/commit/f2884cfee89e43ea8644943dd83e61caadc11b5a))
+
+
+### Bug Fixes
+
+* build ([c36ac48](https://github.com/brokeyourbike/prepare-opencart-module-action/commit/c36ac48359b40ba9fad6946e1e0da9ee62febc92))
+* dist ([263fb3c](https://github.com/brokeyourbike/prepare-opencart-module-action/commit/263fb3cf763228408a05aa45bd385b064712a00f))
+* dist ([56273ca](https://github.com/brokeyourbike/prepare-opencart-module-action/commit/56273ca9f619348522362d7d41c8735265aeefe9))
+* lib ([65ec68e](https://github.com/brokeyourbike/prepare-opencart-module-action/commit/65ec68e3cb186f548353697387681b26165ced3d))
+* minify ([6a5d897](https://github.com/brokeyourbike/prepare-opencart-module-action/commit/6a5d897ad4983734cf09caf2974f1e0c0a37da34))
+
 ### [1.2.4](https://www.github.com/brokeyourbike/prepare-opencart-module-action/compare/v1.2.3...v1.2.4) (2025-07-29)
 
 
