@@ -15,10 +15,11 @@ jobs:
       matrix:
         operating-system: [macos-latest, windows-latest, ubuntu-latest]
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version-file: '.nvmrc'
+          cache: 'npm'
       - run: npm install
       - run: npm audit --audit-level=high
         if: matrix.operating-system == 'ubuntu-latest'
