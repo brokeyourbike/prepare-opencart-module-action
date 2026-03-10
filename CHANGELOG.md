@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/brokeyourbike/prepare-opencart-module-action/compare/v1.3.0...v1.3.1) (2026-03-10)
+
+
+### Bug Fixes
+
+* deps ([8905b2f](https://github.com/brokeyourbike/prepare-opencart-module-action/commit/8905b2fde68ee2c313ba06ee59ee25aa739114b6))
+
 ## [1.3.0](https://github.com/brokeyourbike/prepare-opencart-module-action/compare/v1.2.4...v1.3.0) (2026-01-08)
 
 
