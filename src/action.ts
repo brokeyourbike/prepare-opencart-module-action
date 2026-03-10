@@ -1,4 +1,4 @@
-import * as core from '@actions/core';
+import { info, error, getInput, setOutput, setFailed } from '@actions/core';
 import AdmZip from 'adm-zip';
 import fs from 'fs';
 import path from 'path';
@@ -12,19 +12,19 @@ export async function run(): Promise<void> {
     const githubWorkspace = process.env.GITHUB_WORKSPACE;
 
     if (typeof githubWorkspace !== 'string') {
-      core.error('GITHUB_WORKSPACE is not a string');
+      error('GITHUB_WORKSPACE is not a string');
       return;
     }
 
-    const moduleName = core.getInput('module-name');
-    const files = core.getInput('files');
-    const modificationFile = core.getInput('modification-file');
-    const licenseFile = core.getInput('license-file');
+    const moduleName = getInput('module-name');
+    const files = getInput('files');
+    const modificationFile = getInput('modification-file');
+    const licenseFile = getInput('license-file');
 
     const destName = `${moduleName}.ocmod.zip`;
     const destPath = path.join(githubWorkspace, destName);
 
-    core.info(`Ready to zip ${files} into ${destName}`);
+    info(`Ready to zip ${files} into ${destName}`);
 
     const zip = new AdmZip();
 
@@ -33,7 +33,7 @@ export async function run(): Promise<void> {
         const filePath = path.join(githubWorkspace, fileName);
 
         if (!fs.existsSync(filePath)) {
-          core.error(`  - ${fileName} (Not Found)`);
+          error(`  - ${fileName} (Not Found)`);
           return;
         }
 
@@ -48,7 +48,7 @@ export async function run(): Promise<void> {
           zip.addLocalFile(filePath, path.join(UPLOAD_FOLDER, zipPath));
         }
 
-        core.info(`  - ${fileName}`);
+        info(`  - ${fileName}`);
       });
     }
 
@@ -56,7 +56,7 @@ export async function run(): Promise<void> {
       const modificationFilePath = path.join(githubWorkspace, modificationFile);
 
       if (!fs.existsSync(modificationFilePath)) {
-        core.error(`Modification file - ${modificationFilePath} (Not Found)`);
+        error(`Modification file - ${modificationFilePath} (Not Found)`);
         return;
       }
 
@@ -67,7 +67,7 @@ export async function run(): Promise<void> {
       const licenseFilePath = path.join(githubWorkspace, licenseFile);
 
       if (!fs.existsSync(licenseFilePath)) {
-        core.error(`License file - ${licenseFilePath} (Not Found)`);
+        error(`License file - ${licenseFilePath} (Not Found)`);
         return;
       }
 
@@ -76,11 +76,11 @@ export async function run(): Promise<void> {
 
     zip.writeZip(destPath);
 
-    core.setOutput('output_name', destName);
-    core.setOutput('output_file', destPath);
-    core.info(`Zipped file ${destName} successfully`);
+    setOutput('output_name', destName);
+    setOutput('output_file', destPath);
+    info(`Zipped file ${destName} successfully`);
   } catch (err) {
     const message = err instanceof Error ? err.message : 'Failed to `run`';
-    core.setFailed(message);
+    setFailed(message);
   }
 }
