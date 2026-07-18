@@ -23,7 +23,7 @@
   "dependencies": {
     "@actions/core": "^2.0.1",
     "@actions/github": "^9.0.0",
-    "adm-zip": "^0.5.16"
+    "adm-zip": "^0.6.0"
   },
   "devDependencies": {
     "@types/adm-zip": "^0.4.34",
